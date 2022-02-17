@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando no DOM</title>
+    <style>
+        body {
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 18px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primeiros passos com o DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <div name="msg">Clique em mim</div>
+    <div class="msg">Clique em mim</div>
+    <div id="msg-1">Clique em mim</div>
+    <div class="msg-1">Clique em mim</div>
+
+
+
+    <script>
+        //Primeira forma de se fazer
+        var corpo = document.body
+        var p1 = document.getElementsByTagName('p')[1]
+        var primeiraDiv = document.getElementById('msg')
+        var segundaDiv  = document.getElementsByName('msg')[0]
+        var terceiraDiv = document.getElementsByClassName('msg')[0]
+        var quartaDiv   = document.querySelector('div#msg-1')
+        var quintaDiv   = document.querySelector('div.msg-1')
+
+        primeiraDiv.style.color      = 'black'
+        primeiraDiv.style.background = 'yellow'
+        primeiraDiv.innerText        = 'Olhe pra mim!'
+        segundaDiv.innerText         = 'Clicou em mim novamente'
+        terceiraDiv.innerText        = 'CLICOU PELA TERCEIRA VEZ'
+        quartaDiv.innerText          = 'Maneira moderna'
+        quintaDiv.innerText          = 'Maneira moderna (1)'
+        
+        //Segunda forma de se fazer, mais direta
+        document.getElementsByTagName('p')[1].style.background = 'green'
+        document.getElementById('msg').style.color             = 'black'
+        document.getElementById('msg').innerText               = 'Olá, Mundo!'
+        document.getElementById('msg').style.background        = 'yellow'
+        document.getElementsByName('msg')[0].innerText         = 'Clicou em mim novamente'
+        document.getElementsByClassName('msg')[0].innerText    = 'CLICOU PELA TERCEIRA VEZ'
+
+        //Utilizando querySelector() / querySelectorAll()
+
+        document.querySelector('div#msg-1').innerText      = 'Maneira moderna'
+        document.querySelector('div.msg-1').innerText      = 'Maneira moderna (1)'
+        document.getElementsByTagName('h1')[0].style.color = 'gray'
+    </script>
+</body>
+</html>
